@@ -4,12 +4,17 @@ import type { NextRequest } from 'next/server'
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
 
-  // Redirect /eg and /eg/* back to root or remove the /eg prefix
-  if (pathname.startsWith('/eg')) {
-    const newPath = pathname.replace(/^\/eg/, '') || '/'
-    const url = request.nextUrl.clone()
-    url.pathname = newPath
-    return NextResponse.redirect(url, 301)
+  // List of locale prefixes to redirect (remove from URL)
+  const localePrefixes = ['/eg', '/en', '/ar', '/fr']
+  
+  // Check if pathname starts with any locale prefix
+  for (const locale of localePrefixes) {
+    if (pathname === locale || pathname.startsWith(`${locale}/`)) {
+      const newPath = pathname.replace(new RegExp(`^${locale}`), '') || '/'
+      const url = request.nextUrl.clone()
+      url.pathname = newPath
+      return NextResponse.redirect(url, 301)
+    }
   }
 
   return NextResponse.next()
