@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/eg",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/eg/:path*",
+      "destination": "/:path*",
+      "permanent": true
+    }
+  ]
+}
+
