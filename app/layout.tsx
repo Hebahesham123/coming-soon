@@ -13,10 +13,10 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "https://cdn.shopify.com/s/files/1/0949/0949/7707/files/logo_ns-03_1.png?v=1768291739",
+        url: "https://cdn.shopify.com/s/files/1/0949/0949/7707/files/logo_ns-01_1.png?v=1768291739",
       },
     ],
-    apple: "https://cdn.shopify.com/s/files/1/0949/0949/7707/files/logo_ns-03_1.png?v=1768291739",
+    apple: "https://cdn.shopify.com/s/files/1/0949/0949/7707/files/logo_ns-01_1.png?v=1768291739",
   },
 }
 

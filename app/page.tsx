@@ -33,8 +33,9 @@ export default function ComingSoonPage() {
             alt="Naguib Selim Fabrics & More"
             width={200}
             height={80}
-            className="h-auto w-auto max-w-[180px] md:max-w-[220px]"
+            className="h-auto w-auto max-w-[180px] md:max-w-[220px] brightness-0 invert"
             priority
+            style={{ filter: 'brightness(0) invert(1)' }}
           />
         </div>
 
