@@ -3,92 +3,98 @@
 import type React from "react"
 
 import Image from "next/image"
-import { useState } from "react"
+import { Linkedin, Facebook, Instagram, Youtube } from "lucide-react"
 
 export default function ComingSoonPage() {
-  const [email, setEmail] = useState("")
-  const [subscribed, setSubscribed] = useState(false)
-
-  const handleSubscribe = (e: React.FormEvent) => {
-    e.preventDefault()
-    if (email) {
-      setSubscribed(true)
-      setEmail("")
-      setTimeout(() => setSubscribed(false), 3000)
-    }
-  }
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-stone-50 to-amber-50 flex items-center justify-center px-4 overflow-hidden relative">
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-5 z-0">
+    <main className="min-h-screen relative overflow-hidden">
+      {/* Golden-bronze satin fabric background image */}
+      <div className="absolute inset-0">
         <Image
-          src="/images/logo-20ns-02.png"
+          src="https://cdn.shopify.com/s/files/1/0949/0949/7707/files/Landing_Page_Design_1_2.png?v=1768291748"
           alt=""
-          width={800}
-          height={240}
-          className="h-auto w-full max-w-4xl"
-          aria-hidden="true"
+          fill
+          className="object-cover"
+          priority
+          quality={90}
+          style={{ objectPosition: 'center' }}
         />
+        {/* Overlay for better text readability */}
+        <div className="absolute inset-0 bg-amber-900/20" />
       </div>
 
-      <div className="max-w-2xl w-full text-center space-y-12 relative z-10">
-        {/* Logo - Added fade-in and slide-down animation */}
-        <div className="flex justify-center animate-fade-in-down">
+      {/* Content */}
+      <div className="relative z-10 min-h-screen flex flex-col">
+        {/* Logo - Top Left */}
+        <div className="absolute top-6 left-6 md:top-8 md:left-8 z-20">
           <Image
-            src="/images/logo-20ns-02.png"
+            src="https://cdn.shopify.com/s/files/1/0949/0949/7707/files/logo_ns-03_1.png?v=1768291739"
             alt="Naguib Selim Fabrics & More"
-            width={400}
-            height={120}
-            className="h-auto w-full max-w-sm"
+            width={200}
+            height={80}
+            className="h-auto w-auto max-w-[180px] md:max-w-[220px]"
             priority
           />
         </div>
 
-        {/* Main Heading - Added staggered fade-in animation */}
-        <div className="space-y-6 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
-          <h1 className="text-5xl md:text-6xl font-serif text-amber-900 font-light tracking-wide">Coming Soon</h1>
-          <p className="text-lg md:text-xl text-amber-800 font-light leading-relaxed max-w-lg mx-auto">
-            Discover exquisite fabrics and luxury textiles crafted with passion and precision. We're preparing something
-            extraordinary for you.
-          </p>
+        {/* Main Content - Centered */}
+        <div className="flex-1 flex items-center justify-center px-4 py-20">
+          <div className="max-w-3xl w-full text-center space-y-8">
+            {/* Main Heading */}
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif text-amber-100 font-light tracking-wide">
+              Launching soon!
+            </h1>
+
+            {/* Subtext */}
+            <p className="text-xl md:text-2xl text-amber-100 font-bold leading-relaxed max-w-2xl mx-auto drop-shadow-lg" dir="rtl">
+              قريب جداً، بقدم خبرة وشغل سنين في الأقمشة بشكل جديد وأسهل من أي وقت فات.
+              <br />
+              مش مجرد قماش.. دي تجربة كاملة
+            </p>
+          </div>
         </div>
 
-        {/* Email Subscription - Added floating animation and staggered entrance */}
-        <form
-          onSubmit={handleSubscribe}
-          className="space-y-4 mt-12 animate-fade-in-up"
-          style={{ animationDelay: "0.4s" }}
-        >
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              className="px-6 py-3 bg-white text-amber-900 placeholder-amber-400 border-2 border-amber-200 rounded-full focus:outline-none focus:border-amber-600 transition-all duration-300 hover:shadow-md focus:shadow-lg flex-1 max-w-xs"
-              aria-label="Email for notifications"
-            />
-            <button
-              type="submit"
-              className="px-8 py-3 bg-amber-900 text-amber-50 rounded-full font-medium hover:bg-amber-800 transition-all duration-300 hover:shadow-lg hover:scale-105 active:scale-95"
+        {/* Social Media Icons - Bottom Center */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
+          <div className="flex items-center gap-6">
+            <a 
+              href="https://www.linkedin.com/company/naguibselim/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white hover:text-amber-200 transition-colors duration-300"
+              aria-label="LinkedIn"
             >
-              Notify Me
-            </button>
+              <Linkedin size={24} />
+            </a>
+            <a 
+              href="https://www.facebook.com/share/14Udwota2xU/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white hover:text-amber-200 transition-colors duration-300"
+              aria-label="Facebook"
+            >
+              <Facebook size={24} />
+            </a>
+            <a 
+              href="https://www.instagram.com/naguibselimtex?igsh=MXRmNW0wcG04eWdxbg=="
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white hover:text-amber-200 transition-colors duration-300"
+              aria-label="Instagram"
+            >
+              <Instagram size={24} />
+            </a>
+            <a 
+              href="https://www.youtube.com/@naguibselim"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white hover:text-amber-200 transition-colors duration-300"
+              aria-label="YouTube"
+            >
+              <Youtube size={24} />
+            </a>
           </div>
-          {subscribed && (
-            <p className="text-amber-700 text-sm font-medium animate-fade-in">✓ Thank you! We'll keep you updated.</p>
-          )}
-        </form>
-
-        {/* Decorative Elements - Added pulse animation */}
-        <div
-          className="mt-16 pt-12 border-t-2 border-amber-200/50 animate-fade-in-up"
-          style={{ animationDelay: "0.6s" }}
-        >
-          <p className="text-amber-700 text-sm tracking-widest uppercase animate-pulse-subtle">
-            Premium Fabrics Since 1970s
-          </p>
         </div>
       </div>
     </main>
