@@ -10,23 +10,13 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "Naguib Selim - Coming Soon",
   description: "Premium fabrics and luxury textiles. Coming soon to you.",
-  generator: "v0.app",
   icons: {
     icon: [
       {
-        url: "/icon-light-32x32.png",
-        media: "(prefers-color-scheme: light)",
-      },
-      {
-        url: "/icon-dark-32x32.png",
-        media: "(prefers-color-scheme: dark)",
-      },
-      {
-        url: "/icon.svg",
-        type: "image/svg+xml",
+        url: "https://cdn.shopify.com/s/files/1/0949/0949/7707/files/logo_ns-03_1.png?v=1768291739",
       },
     ],
-    apple: "/apple-icon.png",
+    apple: "https://cdn.shopify.com/s/files/1/0949/0949/7707/files/logo_ns-03_1.png?v=1768291739",
   },
 }
 

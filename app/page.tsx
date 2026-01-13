@@ -48,7 +48,7 @@ export default function ComingSoonPage() {
 
             {/* Subtext */}
             <p className="text-xl md:text-2xl text-amber-100 font-bold leading-relaxed max-w-2xl mx-auto drop-shadow-lg" dir="rtl">
-              قريب جداً، بقدم خبرة وشغل سنين في الأقمشة بشكل جديد وأسهل من أي وقت فات.
+              قريب جداً، بنقدم خبرة وشغل سنين في الأقمشة بشكل جديد وأسهل من أي وقت فات.
               <br />
               مش مجرد قماش.. دي تجربة كاملة
             </p>
